@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "title": "Getting Started with Next.js",
+    "content": "This is your first blog post using App Router!"
+  },
+  {
+    "id": "2",
+    "title": "Understanding Routing in Next.js",
+    "content": "This post explains how routing works in Next.js with examples."
+  }
+]

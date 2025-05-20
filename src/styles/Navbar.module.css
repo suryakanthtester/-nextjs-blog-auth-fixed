@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
