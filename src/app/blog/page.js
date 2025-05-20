@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import styles from '@/styles/blog.module.css';
 
 export default function BlogList() {
   const [posts, setPosts] = useState([]);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     fetch('/api/posts')
@@ -13,27 +13,25 @@ export default function BlogList() {
         if (Array.isArray(data)) {
           setPosts(data);
         } else {
-          setError('Unexpected response from server');
-          setPosts([]); // prevent crash
+          setPosts([]);
         }
-      })
-      .catch((err) => {
-        setError('Failed to load posts');
-        console.error(err);
       });
   }, []);
 
   return (
-    <div>
-      <h1>All Posts</h1>
-      <Link href="/create">+ New Post</Link>
-
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-
-      <ul>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>All Posts</h1>
+        <Link href="/create">
+          <a className={styles.newPostLink}>+ New Post</a>
+        </Link>
+      </div>
+      <ul className={styles.postList}>
         {posts.map((post) => (
-          <li key={post._id}>
-            <Link href={`/blog/${post._id}`}>{post.title}</Link>
+          <li key={post._id} className={styles.postItem}>
+            <Link href={`/blog/${post._id}`}>
+              <a className={styles.postLink}>{post.title}</a>
+            </Link>
           </li>
         ))}
       </ul>

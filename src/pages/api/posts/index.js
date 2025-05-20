@@ -12,10 +12,12 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
+  const userId = session.user.id;
+
   if (req.method === 'GET') {
     try {
-      // ✅ Return ALL posts (no user filter)
-      const posts = await Post.find({});
+      // ✅ Return only posts created by the logged-in user
+      const posts = await Post.find({ userId });
       res.status(200).json(posts);
     } catch (err) {
       res.status(500).json({ message: 'Failed to fetch posts' });
@@ -26,10 +28,14 @@ export default async function handler(req, res) {
     try {
       const { title, content } = req.body;
 
+      if (!title || !content) {
+        return res.status(400).json({ message: 'Title and content are required' });
+      }
+
       const post = await Post.create({
         title,
         content,
-        userId: session.user.id, // ✅ Attach the user's ID
+        userId, // Store post owner
       });
 
       res.status(201).json(post);
@@ -39,6 +45,6 @@ export default async function handler(req, res) {
   }
 
   else {
-    res.status(405).end();
+    res.status(405).end(); // Method Not Allowed
   }
 }

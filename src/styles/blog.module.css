@@ -1,52 +1,60 @@
 .container {
+  max-width: 800px;
+  margin: 60px auto;
   padding: 2rem;
-  background-color: var(--background);
-  color: var(--foreground);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 700px;
-  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .title {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
+  color: #333;
 }
 
-.content {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.buttonGroup {
-  display: flex;
-  gap: 1rem;
-}
-
-.editButton {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 10px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.editButton:hover {
-  background-color: var(--button-hover);
-}
-
-.deleteButton {
-  background-color: crimson;
+.newPostLink {
+  background: #0070f3;
   color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.deleteButton:hover {
-  background-color: darkred;
+.newPostLink:hover {
+  background: #005bb5;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+}
+
+.postItem {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.postItem:hover {
+  background: #e6f0ff;
+}
+
+.postLink {
+  font-size: 1.2rem;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.postLink:hover {
+  text-decoration: underline;
 }

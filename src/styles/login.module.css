@@ -8,10 +8,10 @@
   text-align: center;
 }
 
-.title {
+.heading {
   margin-bottom: 1rem;
   font-size: 24px;
-  color: #333;
+  font-weight: bold;
 }
 
 .form {
@@ -20,14 +20,14 @@
   gap: 1rem;
 }
 
-input {
+.input {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-button {
+.button {
   background: #0070f3;
   color: white;
   padding: 10px;
@@ -37,6 +37,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background: #005bb5;
 }
