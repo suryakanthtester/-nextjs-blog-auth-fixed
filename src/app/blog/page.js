@@ -22,8 +22,8 @@ export default function BlogList() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>All Posts</h1>
-        <Link href="/create">
-          <a className={styles.newPostLink}>+ New Post</a>
+       <Link href="/create" className={styles.newPostLink}>
+           + New Post
         </Link>
       </div>
       <ul className={styles.postList}>

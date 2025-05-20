@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '@/styles/auth.module.css';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -44,6 +45,9 @@ export default function LoginPage() {
           required
         />
         <button type="submit">Login</button>
+        <p>
+           Don't have an account? <Link href="/signup">Sign up</Link>
+          </p>
       </form>
     </div>
   );
