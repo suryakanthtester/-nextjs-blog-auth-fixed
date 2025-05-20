@@ -3,7 +3,7 @@
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from '@/styles/login.module.css';
+import styles from '@/styles/auth.module.css';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -35,7 +35,6 @@ export default function LoginPage() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
-          className={styles.input}
         />
         <input
           type="password"
@@ -43,9 +42,8 @@ export default function LoginPage() {
           value={password}
           onChange={e => setPassword(e.target.value)}
           required
-          className={styles.input}
         />
-        <button type="submit" className={styles.button}>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
